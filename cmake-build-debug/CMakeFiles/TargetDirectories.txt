@@ -1,0 +1,3 @@
+/home/mmiknich/Study/Bcode/mikrosha/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/mmiknich/Study/Bcode/mikrosha/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/mmiknich/Study/Bcode/mikrosha/cmake-build-debug/CMakeFiles/mikrosha.dir

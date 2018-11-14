@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/mmiknich/Study/Bcode/mikrosha/main.cpp
+sstream
+-
+iostream
+-
+dirent.h
+-
+stdio.h
+-
+unistd.h
+-
+string.h
+-
+pwd.h
+-
+sys/types.h
+-
+iostream
+-
+cstring
+-
+map
+-
+vector
+-
+sstream
+-
+

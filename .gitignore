@@ -1,3 +1,6 @@
 .git/*
 .directory
-
+CMakeLists.txt
+a.out
+.idea/*
+cmake-build-debug/*
