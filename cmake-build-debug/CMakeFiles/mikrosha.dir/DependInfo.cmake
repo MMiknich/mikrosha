@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/mmiknich/Study/Bcode/mikrosha/ConveyorElement.cpp" "/home/mmiknich/Study/Bcode/mikrosha/cmake-build-debug/CMakeFiles/mikrosha.dir/ConveyorElement.cpp.o"
   "/home/mmiknich/Study/Bcode/mikrosha/main.cpp" "/home/mmiknich/Study/Bcode/mikrosha/cmake-build-debug/CMakeFiles/mikrosha.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

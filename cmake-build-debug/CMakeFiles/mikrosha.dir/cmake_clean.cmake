@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/mikrosha.dir/main.cpp.o"
+  "CMakeFiles/mikrosha.dir/ConveyorElement.cpp.o"
   "mikrosha.pdb"
   "mikrosha"
 )

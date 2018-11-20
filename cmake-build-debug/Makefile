@@ -123,6 +123,33 @@ mikrosha/fast:
 	$(MAKE) -f CMakeFiles/mikrosha.dir/build.make CMakeFiles/mikrosha.dir/build
 .PHONY : mikrosha/fast
 
+ConveyorElement.o: ConveyorElement.cpp.o
+
+.PHONY : ConveyorElement.o
+
+# target to build an object file
+ConveyorElement.cpp.o:
+	$(MAKE) -f CMakeFiles/mikrosha.dir/build.make CMakeFiles/mikrosha.dir/ConveyorElement.cpp.o
+.PHONY : ConveyorElement.cpp.o
+
+ConveyorElement.i: ConveyorElement.cpp.i
+
+.PHONY : ConveyorElement.i
+
+# target to preprocess a source file
+ConveyorElement.cpp.i:
+	$(MAKE) -f CMakeFiles/mikrosha.dir/build.make CMakeFiles/mikrosha.dir/ConveyorElement.cpp.i
+.PHONY : ConveyorElement.cpp.i
+
+ConveyorElement.s: ConveyorElement.cpp.s
+
+.PHONY : ConveyorElement.s
+
+# target to generate assembly for a file
+ConveyorElement.cpp.s:
+	$(MAKE) -f CMakeFiles/mikrosha.dir/build.make CMakeFiles/mikrosha.dir/ConveyorElement.cpp.s
+.PHONY : ConveyorElement.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -159,6 +186,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... mikrosha"
+	@echo "... ConveyorElement.o"
+	@echo "... ConveyorElement.i"
+	@echo "... ConveyorElement.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

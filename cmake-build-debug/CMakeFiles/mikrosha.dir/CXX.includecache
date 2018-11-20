@@ -6,10 +6,34 @@
 
 #IncludeRegexTransform: 
 
-/home/mmiknich/Study/Bcode/mikrosha/main.cpp
+/home/mmiknich/Study/Bcode/mikrosha/ConveyorElement.cpp
+iostream
+-
+queue
+-
+cstring
+-
 sstream
 -
+zconf.h
+-
+sys/wait.h
+-
+fcntl.h
+-
+pwd.h
+-
+ConveyorElement.h
+/home/mmiknich/Study/Bcode/mikrosha/ConveyorElement.h
+
+/home/mmiknich/Study/Bcode/mikrosha/ConveyorElement.h
+string
+-
+
+/home/mmiknich/Study/Bcode/mikrosha/main.cpp
 iostream
+-
+sstream
 -
 dirent.h
 -
@@ -17,13 +41,11 @@ stdio.h
 -
 unistd.h
 -
-string.h
--
 pwd.h
 -
 sys/types.h
 -
-iostream
+sys/wait.h
 -
 cstring
 -
@@ -31,6 +53,8 @@ map
 -
 vector
 -
-sstream
+fcntl.h
 -
+ConveyorElement.h
+/home/mmiknich/Study/Bcode/mikrosha/ConveyorElement.h
 

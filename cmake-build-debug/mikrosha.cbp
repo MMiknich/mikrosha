@@ -82,6 +82,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/mmiknich/Study/Bcode/mikrosha/ConveyorElement.cpp">
+			<Option target="mikrosha"/>
+		</Unit>
+		<Unit filename="/home/mmiknich/Study/Bcode/mikrosha/ConveyorElement.h">
+			<Option target="mikrosha"/>
+		</Unit>
 		<Unit filename="/home/mmiknich/Study/Bcode/mikrosha/main.cpp">
 			<Option target="mikrosha"/>
 		</Unit>

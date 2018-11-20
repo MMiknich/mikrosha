@@ -1,1 +1,1 @@
-/bin/c++  -g   CMakeFiles/mikrosha.dir/main.cpp.o  -o mikrosha 
+/bin/c++  -g   CMakeFiles/mikrosha.dir/main.cpp.o CMakeFiles/mikrosha.dir/ConveyorElement.cpp.o  -o mikrosha 

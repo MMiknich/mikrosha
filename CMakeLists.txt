@@ -3,4 +3,4 @@ project(mikrosha)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(mikrosha main.cpp)
+add_executable(mikrosha main.cpp ConveyorElement.cpp ConveyorElement.h)
