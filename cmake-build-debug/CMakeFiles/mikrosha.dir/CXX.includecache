@@ -23,6 +23,10 @@ fcntl.h
 -
 pwd.h
 -
+glob.h
+-
+signal.h
+-
 ConveyorElement.h
 /home/mmiknich/Study/Bcode/mikrosha/ConveyorElement.h
 

@@ -17,109 +17,118 @@
 #include <fcntl.h>
 #include "ConveyorElement.h"
 
+void parentSignal(int inp);
+int lineinterpreter(const std::string input_line);
 
 int main(int argc, char* argv[]){
-
-    //--Defining basic data
-    passwd *userdata = getpwuid(getuid());
-
-    std::string user_name = userdata->pw_name ; // defining name of start user
-    bool is_root = !(bool) std::strcmp(user_name.c_str(),"root"); // root flag
-    char user_invite = is_root?'!':'>'; // just to make output easy
-
-    char buff[FILENAME_MAX];
-    std::string start_dir = getcwd(buff, FILENAME_MAX); //defining start directory
-
-    //Here the program starts.
+    signal(SIGINT, SIG_IGN);
     while (true) {
+
+        //--Defining basic data
+        passwd *userdata = getpwuid(getuid());
+
+        std::string user_name = userdata->pw_name ; // defining name of start user
+        bool isRoot = !(bool) std::strcmp(user_name.c_str(),"root"); // root flag
+        char userInvite = isRoot?'!':'>'; // just to make output easy
+
+        char buff[FILENAME_MAX];
+        std::string start_dir = getcwd(buff, FILENAME_MAX); //defining start directory
+
+
         std::printf("[%s %s]%c ", user_name.c_str(), start_dir.c_str(),
-                    user_invite); // invite like: [user /home/user/Desktop]> or [root /home/user/Desktop]!
+                    userInvite); // invite like: [user /home/user/Desktop]> or [root /home/user/Desktop]!
 
-        std::string input_line = "";
-        std::getline(std::cin, input_line);
+        std::string inputLine = "";
+        std::getline(std::cin, inputLine);
 
-        std::size_t convSimbol = input_line.find('|');
-        std::size_t inpRedirect = input_line.find('<');
-        std::size_t outRedirect = input_line.find('>');
+        std::size_t convSimbol = inputLine.find('|');
+        std::size_t inpRedirect = inputLine.find('<');
+        std::size_t outRedirect = inputLine.find('>');
 
+
+        //this code is made for  <, >, >>.
         if (convSimbol != std::string::npos) {
             //TODO: parsing | | | and #PATH
-        } else if (outRedirect != std::string::npos && inpRedirect != std::string::npos) {
+            lineinterpreter(inputLine);
+
+        }
+        else if (outRedirect != std::string::npos && inpRedirect != std::string::npos)
+        {
             std::size_t firstSimb = outRedirect < inpRedirect ? outRedirect : inpRedirect; // looking for first of '<' and '>'
-            ConveyorElement conveyorElement1(input_line.substr(0, firstSimb - 1).c_str());
+            ConveyorElement conveyorElement1(inputLine.substr(0, firstSimb - 1).c_str());
 
             if (firstSimb == outRedirect)
             {
-                if (std::strcmp(input_line.substr(outRedirect, 2).c_str(), ">>") == 0) {
+                if (std::strcmp(inputLine.substr(outRedirect, 2).c_str(), ">>") == 0) {
                     std::string outfName;
-                    std::istringstream(input_line.substr(outRedirect + 2, inpRedirect - (outRedirect + 2))) >> outfName;
+                    std::istringstream(inputLine.substr(outRedirect + 2, inpRedirect - (outRedirect + 2))) >> outfName;
                     std::string inpfName;
-                    std::istringstream(input_line.substr(inpRedirect + 1)) >> outfName;
+                    std::istringstream(inputLine.substr(inpRedirect + 1)) >> outfName;
                     conveyorElement1.run(inpfName,outfName,EXISTINGOUTPUT_MODE);
-                    wait(0);
+                    wait(nullptr);
                 } else {
                     std::string outfName;
-                    std::istringstream(input_line.substr(outRedirect + 1, inpRedirect - (outRedirect + 1))) >> outfName;
+                    std::istringstream(inputLine.substr(outRedirect + 1, inpRedirect - (outRedirect + 1))) >> outfName;
                     std::string inpfName;
-                    std::istringstream(input_line.substr(inpRedirect + 1)) >> outfName;
+                    std::istringstream(inputLine.substr(inpRedirect + 1)) >> outfName;
                     conveyorElement1.run(inpfName,outfName,NEWOUTPUT_MODE);
-                    wait(0);
+                    wait(nullptr);
                 }
-            } else{
-                if (std::strcmp(input_line.substr(outRedirect, 2).c_str(), ">>") == 0) {
+            } else {
+                if (std::strcmp(inputLine.substr(outRedirect, 2).c_str(), ">>") == 0) {
                     std::string outfName;
-                    std::istringstream(input_line.substr(outRedirect + 2)) >> outfName;
+                    std::istringstream(inputLine.substr(outRedirect + 2)) >> outfName;
                     std::string inpfName;
-                    std::istringstream(input_line.substr(inpRedirect + 1, outRedirect - (inpRedirect + 1))) >> outfName;
-                    conveyorElement1.run(inpfName,outfName,EXISTINGOUTPUT_MODE);
-                    wait(0);
+                    std::istringstream(inputLine.substr(inpRedirect + 1, outRedirect - (inpRedirect + 1))) >> outfName;
+                    conveyorElement1.run(inpfName, outfName, EXISTINGOUTPUT_MODE);
+                    wait(nullptr);
                 } else {
                     std::string outfName;
-                    std::istringstream(input_line.substr(outRedirect + 1)) >> outfName;
+                    std::istringstream(inputLine.substr(outRedirect + 1)) >> outfName;
                     std::string inpfName;
-                    std::istringstream(input_line.substr(inpRedirect + 1, outRedirect - (inpRedirect + 1))) >> outfName;
-                    conveyorElement1.run(inpfName,outfName,NEWOUTPUT_MODE);
-                    wait(0);
+                    std::istringstream(inputLine.substr(inpRedirect + 1, outRedirect - (inpRedirect + 1))) >> outfName;
+                    conveyorElement1.run(inpfName, outfName, NEWOUTPUT_MODE);
+                    wait(nullptr);
                 }
             }
 
-            if (std::strcmp(input_line.substr(outRedirect, 2).c_str(), ">>")) {
+            if (std::strcmp(inputLine.substr(outRedirect, 2).c_str(), ">>")) {
 
             } else {
                 std::string fName;
-                std::istringstream(input_line.substr(outRedirect + 2)) >> fName;
+                std::istringstream(inputLine.substr(outRedirect + 2)) >> fName;
                 conveyorElement1.run(fName, EXISTINGOUTPUT_MODE);
-                wait(0);
+                wait(nullptr);
             }
 
         } else if (outRedirect != std::string::npos) {
-            ConveyorElement conveyorElement1(input_line.substr(0, outRedirect - 1));
-            if (std::strcmp(input_line.substr(outRedirect, 2).c_str(), ">>") == 0) {
+            ConveyorElement conveyorElement1(inputLine.substr(0, outRedirect - 1));
+            if (std::strcmp(inputLine.substr(outRedirect, 2).c_str(), ">>") == 0) {
                 std::string fName;
-                std::istringstream(input_line.substr(outRedirect + 2)) >> fName;
+                std::istringstream(inputLine.substr(outRedirect + 2)) >> fName;
                 conveyorElement1.run(fName, EXISTINGOUTPUT_MODE);
-                wait(0);
+                wait(nullptr);
             } else {
                 std::string fName;
-                std::istringstream(input_line.substr(outRedirect + 1)) >> fName;
+                std::istringstream(inputLine.substr(outRedirect + 1)) >> fName;
                 conveyorElement1.run(fName, NEWOUTPUT_MODE);
-                wait(0);
+                wait(nullptr);
             }
         } else if (inpRedirect != std::string::npos) {
-            ConveyorElement conveyorElement1(input_line.substr(0, inpRedirect - 1));
+            ConveyorElement conveyorElement1(inputLine.substr(0, inpRedirect - 1));
             std::string fName;
-            std::istringstream(input_line.substr(inpRedirect + 1)) >> fName;
+            std::istringstream(inputLine.substr(inpRedirect + 1)) >> fName;
             conveyorElement1.run(fName, INPUT_MODE);
-            wait(0);
+            wait(nullptr);
         } else {
-            ConveyorElement conveyorElement(input_line);
+            ConveyorElement conveyorElement(inputLine);
             conveyorElement.run();
-            wait(0);
+            wait(nullptr);
         }
 
 
         //TODO: убрать этот колхоз(сделать нормальный выход из программы)
-        if(!std::strcmp(input_line.c_str(),"exit"))
+        if(!std::strcmp(inputLine.c_str(),"exit"))
             break;
 
     }
@@ -129,58 +138,51 @@ int main(int argc, char* argv[]){
 
 
 //function, that's interprets line as conveyor
-int lineinterpreter(const std::string input_line, char argv[], const std::string start_dir)
+int lineinterpreter(const std::string input_line)
 {
     std::istringstream input_stream(input_line);
-    std::string conv_elem; //не нашел нормального англицкого слова для элемента конвеера
-    while (std::getline(input_stream,conv_elem,'|'))
+    std::string inpComm; //не нашел нормального англицкого слова для элемента конвеера
+    std::vector<ConveyorElement*> conveyor;
+    while (std::getline(input_stream,inpComm,'|'))
     {
-        conv_elem = start_dir + "/"+ conv_elem;
-        std::cout << conv_elem << '\n';
-       execl(conv_elem.c_str(), NULL);
+        conveyor.push_back(new ConveyorElement(inpComm));
     };
+    int cSize = conveyor.size();
+    int *pipeline = new int[(cSize-1)*2];
+
+    int p = pipe(pipeline);
+    if (p == -1) {
+        perror("pipe");
+        return 0;
+    }
+
+    (*conveyor[0]).intoPipe_O(*(pipeline + 1));
+
+    for (int i = 1; i < cSize - 1; i++)
+    {
+        if (pipe(pipeline + (2*i))== -1) {
+            perror("pipe");
+            return 0;
+        }
+
+        (*conveyor[i]).intoPipeIO(*(pipeline + (2*i) - 2), *(pipeline + (2*i) +1));
+    }
+    (*conveyor[cSize - 1]).intoPipeI_(*(pipeline + (2*cSize) - 4));
+    for (int i = 0; i < cSize - 1; i++)
+    {
+        wait(0);
+    }
     return 0;
 }
 
-int executer(const std::string input_line)
+void parentSignal(int inp)
 {
-    std::istringstream input_stream(input_line);
-    std::string str_elem;
-    std::vector<std::string> conveer;
-    while (std::getline(input_stream,str_elem,'|')) conveer.push_back(str_elem);   //заполняем вектор элементов конвеера
-    //теперь для каждый элемент надо выполнить:
-    for(int i = 0; i < conveer.size(); i++)
-        std::cout << conveer[i] << '\n';
+    return;
+}
 
-    if (conveer.size() == 1)
-    {
-        pid_t pid =fork();
-        if(pid == -1)
-            return -1;
-        else if(pid == 0)
-        {
-            //there is no conveyor
-            std::istringstream commandStream(conveer[0]);
-            std::string comndString = "";
-            std::getline(commandStream,comndString);
-            if (!(bool)std::strcmp("pwd", comndString.c_str()))
-            {
-                char buff[FILENAME_MAX];
-                std::string start_dir = getcwd(buff, FILENAME_MAX);
-                std::cout << buff << '\n';
-            }
-        }
-    }
-    else{
 
-    }
-//    conv_elem = start_dir + "/"+ conv_elem;
-//    std::cout << conv_elem << '\n';
-//    execl(conv_elem.c_str(), NULL);
     //TODO: parsing
     //TODO: разбивание строки по |
     //TODO: реализация time [cmd args]
-    return 0;
-}
 
 //TODO:Надо сделать обработку ошибок системных вызовов через errno из libc

@@ -4,7 +4,7 @@
 
 #ifndef MIKROSHA_CONVEYORELEMENT_H
 #define MIKROSHA_CONVEYORELEMENT_H
-#define MAX_NUMBER_OF_ARGUMENTS
+
 
 #define INPUT_MODE 1 // command < fname
 #define NEWOUTPUT_MODE 2 // command > fname
@@ -18,9 +18,6 @@ private:
     char **argv; // an array of arguments
     unsigned long numofArgv = 0;
     pid_t childPid;
-    unsigned long maxArgLen = 0;
-
-
 
 
 public:
@@ -28,9 +25,11 @@ public:
     ~ConveyorElement();
     //TODO: pipe and others
     int run();// without inp/outp redirection
-    int run(std::string FName, int mode);//with redirection of output
+    int intoPipeIO(int I, int O); // pipe cut
+    int intoPipe_O(int O); // input pipe plug
+    int intoPipeI_(int I); // output pipe plug
+    int run(std::string fname, int mode);//with redirection of output
     int run(std::string inpFName,std::string outFName, int mode);//with redirection of output and input
-    int print();
     pid_t getPID();
 };
 

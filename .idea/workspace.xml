@@ -2,6 +2,7 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/main.cpp" line="5" />
+    <bookmark url="file://$PROJECT_DIR$/main.cpp" line="147" />
   </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
     <generated>
@@ -16,28 +17,14 @@
   <component name="ChangeListManager">
     <list default="true" id="1bacf9a2-6175-4cd3-9864-72b051b704c9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelloWorld.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConveyorElement.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ConveyorElement.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConveyorElement.h" beforeDir="false" afterPath="$PROJECT_DIR$/ConveyorElement.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConveyorElement.h.gch" beforeDir="false" afterPath="$PROJECT_DIR$/ConveyorElement.h.gch" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/mikrosha.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/mikrosha.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/mikrosha.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/mikrosha.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/mikrosha.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/mikrosha.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/mikrosha.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/mikrosha.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/mikrosha.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/mikrosha.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/mikrosha.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/mikrosha.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/mikrosha.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/mikrosha.dir/link.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/mikrosha.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/mikrosha.dir/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/mikrosha.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/mikrosha.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/mikrosha" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/mikrosha" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/mikrosha.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/mikrosha.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helloworld" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/mikrosha" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sqr.cpp" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,12 +33,26 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FUSProjectUsageTrigger">
     <session id="412803847">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="12" />
+          <entry key="project.closed" value="14" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.11" value="2" />
@@ -59,29 +60,34 @@
           <entry key="project.open.time.13" value="2" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.15" value="1" />
-          <entry key="project.open.time.16" value="3" />
-          <entry key="project.open.time.17" value="2" />
+          <entry key="project.open.time.16" value="4" />
+          <entry key="project.open.time.17" value="3" />
           <entry key="project.open.time.18" value="2" />
           <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.21" value="1" />
           <entry key="project.open.time.22" value="1" />
           <entry key="project.open.time.24" value="1" />
+          <entry key="project.open.time.31" value="2" />
           <entry key="project.open.time.43" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="23" />
+          <entry key="project.opened" value="28" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="9442" value="1" />
-          <entry key="cpp" value="9" />
+          <entry key="cbp" value="1" />
+          <entry key="cpp" value="11" />
           <entry key="gitignore" value="1" />
-          <entry key="h" value="11" />
+          <entry key="h" value="13" />
           <entry key="hh" value="2" />
           <entry key="kate" value="1" />
           <entry key="md" value="2" />
-          <entry key="mikrosha (disassembly)" value="9" />
+          <entry key="mikrosha (disassembly)" value="10" />
+          <entry key="r" value="1" />
+          <entry key="tcc" value="1" />
           <entry key="test" value="1" />
           <entry key="txt" value="4" />
           <entry key="vi" value="1" />
@@ -89,67 +95,74 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Disassembly" value="9" />
+          <entry key="Disassembly" value="10" />
           <entry key="Markdown" value="1" />
-          <entry key="ObjectiveC" value="20" />
-          <entry key="PLAIN_TEXT" value="12" />
+          <entry key="ObjectiveC" value="25" />
+          <entry key="PLAIN_TEXT" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cpp" value="8764" />
+          <entry key="cpp" value="10115" />
           <entry key="gitignore" value="54" />
-          <entry key="h" value="736" />
+          <entry key="h" value="932" />
           <entry key="kate" value="1" />
-          <entry key="md" value="59" />
+          <entry key="md" value="76" />
           <entry key="txt" value="28" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Markdown" value="59" />
-          <entry key="ObjectiveC" value="9500" />
+          <entry key="Markdown" value="76" />
+          <entry key="ObjectiveC" value="11047" />
           <entry key="PLAIN_TEXT" value="83" />
         </counts>
       </usages-collector>
     </session>
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="mikrosha" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2101">
-              <caret line="116" column="9" lean-forward="true" selection-start-line="116" selection-start-column="9" selection-end-line="116" selection-end-column="9" />
+            <state relative-caret-position="-4047">
+              <caret line="44" column="31" lean-forward="true" selection-start-line="44" selection-start-column="31" selection-end-line="44" selection-end-column="31" />
+              <folding>
+                <element signature="e#56#75#0" expanded="true" />
+                <element signature="e#5411#6603#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ConveyorElement.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1136">
-              <caret line="221" column="26" selection-start-line="221" selection-start-column="26" selection-end-line="221" selection-end-column="26" />
+            <state relative-caret-position="-152">
+              <caret line="92" column="25" lean-forward="true" selection-start-line="92" selection-start-column="25" selection-end-line="92" selection-end-column="25" />
               <folding>
                 <element signature="e#43#62#0" expanded="true" />
-                <element signature="e#225#1024#0" />
-                <element signature="e#1025#1177#0" />
-                <element signature="e#1178#1366#0" />
+                <element signature="e#225#1181#0" />
+                <element signature="e#1182#1334#0" />
+                <element signature="e#2213#4849#0" />
+                <element signature="e#4850#5850#0" />
+                <element signature="e#5851#5913#0" />
+                <element signature="e#5914#6443#0" />
+                <element signature="e#6444#6897#0" />
+                <element signature="e#7721#8211#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cmake-build-debug/test">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ConveyorElement.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="33" column="19" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
+            <state relative-caret-position="1354">
+              <caret line="34" selection-start-line="34" selection-end-line="34" />
             </state>
           </provider>
         </entry>
@@ -158,8 +171,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="1035">
-                <caret line="23" column="7" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
+              <first_editor relative-caret-position="360">
+                <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
               </first_editor>
               <second_editor />
             </state>
@@ -172,6 +185,11 @@
     <findStrings>
       <find>num</find>
       <find>run</find>
+      <find>signa</find>
+      <find>sigint</find>
+      <find>parentsIG</find>
+      <find>sig</find>
+      <find>exec</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -188,8 +206,10 @@
         <option value="$PROJECT_DIR$/sqr.cpp" />
         <option value="$PROJECT_DIR$/Summ.cpp" />
         <option value="$PROJECT_DIR$/HelloWorld.cpp" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/test.txt" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/Conveyor.cpp" />
+        <option value="$PROJECT_DIR$/Conveyor.h" />
         <option value="$PROJECT_DIR$/ConveyorElement.h" />
         <option value="$PROJECT_DIR$/ConveyorElement.cpp" />
         <option value="$PROJECT_DIR$/main.cpp" />
@@ -214,10 +234,13 @@
       <profile-state>
         <expanded-state>
           <State />
+          <State>
+            <id>C/C++</id>
+          </State>
         </expanded-state>
         <selected-state>
           <State>
-            <id>C/C++</id>
+            <id>Unused codeC/C++</id>
           </State>
         </selected-state>
       </profile-state>
@@ -254,10 +277,11 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="settings.editor.selected.configurable" value="preferences.customizations" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cmake-build-debug" />
       <recent name="$PROJECT_DIR$/cmake-build-debug/CMakeFiles" />
     </key>
   </component>
@@ -321,12 +345,17 @@
       <workItem from="1542644524556" duration="3910000" />
       <workItem from="1542702501962" duration="6472000" />
       <workItem from="1542729076488" duration="15773000" />
-      <workItem from="1542751868045" duration="1543000" />
+      <workItem from="1542751868045" duration="1985000" />
+      <workItem from="1542817386650" duration="5000" />
+      <workItem from="1542832122932" duration="11524000" />
+      <workItem from="1542874679403" duration="11861000" />
+      <workItem from="1542977184061" duration="472000" />
+      <workItem from="1543005201407" duration="7955000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105643000" />
+    <option name="totallyTimeSpent" value="137902000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -339,28 +368,27 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="3840" height="2160" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11045891" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49924356" weight="0.11712913" />
+      <window_info id="Structure" order="1" sideWeight="0.50075644" side_tool="true" weight="0.113127" />
+      <window_info id="Favorites" order="2" sideWeight="0.50075644" side_tool="true" weight="0.113127" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.64487725" visible="true" weight="0.3042105" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4994664" weight="0.30526316" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.64487725" weight="0.2736842" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4994664" weight="0.29526317" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49919957" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4994664" weight="0.27105263" />
-      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="CMake" order="10" />
-      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49733192" weight="0.17894737" />
+      <window_info active="true" anchor="bottom" id="Messages" order="11" sideWeight="0.49733192" visible="true" weight="0.31894737" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5026681" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="Database" order="3" weight="0.32977587" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -378,9 +406,14 @@
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>42</line>
-          <option name="timeStamp" value="31" />
+          <url>file://$PROJECT_DIR$/ConveyorElement.cpp</url>
+          <line>241</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/ConveyorElement.cpp</url>
+          <line>198</line>
+          <option name="timeStamp" value="35" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -453,44 +486,74 @@
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/test.txt" />
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/hh" />
     <entry file="file://$PROJECT_DIR$/test.txt" />
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/test">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/Conveyor.h" />
+    <entry file="file://$PROJECT_DIR$/Conveyor.cpp" />
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/ConveyorElement.cpp" />
+    <entry file="file://$PROJECT_DIR$/r" />
+    <entry file="file:///usr/include/stdio.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4635">
+          <caret line="103" column="8" selection-start-line="103" selection-start-column="8" selection-end-line="103" selection-end-column="8" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
+      <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="1035">
-            <caret line="23" column="7" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
+          <first_editor relative-caret-position="360">
+            <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
-      <provider editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/ConveyorElement.h">
+    <entry file="file:///usr/include/c++/8.2.1/bits/basic_string.tcc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="33" column="19" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
+        <state relative-caret-position="708">
+          <caret line="1225" column="24" lean-forward="true" selection-start-line="1225" selection-start-column="24" selection-end-line="1225" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ConveyorElement.cpp">
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/mikrosha.cbp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/test">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ConveyorElement.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1136">
-          <caret line="221" column="26" selection-start-line="221" selection-start-column="26" selection-end-line="221" selection-end-column="26" />
-          <folding>
-            <element signature="e#43#62#0" expanded="true" />
-            <element signature="e#225#1024#0" />
-            <element signature="e#1025#1177#0" />
-            <element signature="e#1178#1366#0" />
-          </folding>
+        <state relative-caret-position="1354">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2101">
-          <caret line="116" column="9" lean-forward="true" selection-start-line="116" selection-start-column="9" selection-end-line="116" selection-end-column="9" />
+        <state relative-caret-position="-4047">
+          <caret line="44" column="31" lean-forward="true" selection-start-line="44" selection-start-column="31" selection-end-line="44" selection-end-column="31" />
+          <folding>
+            <element signature="e#56#75#0" expanded="true" />
+            <element signature="e#5411#6603#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ConveyorElement.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-152">
+          <caret line="92" column="25" lean-forward="true" selection-start-line="92" selection-start-column="25" selection-end-line="92" selection-end-column="25" />
+          <folding>
+            <element signature="e#43#62#0" expanded="true" />
+            <element signature="e#225#1181#0" />
+            <element signature="e#1182#1334#0" />
+            <element signature="e#2213#4849#0" />
+            <element signature="e#4850#5850#0" />
+            <element signature="e#5851#5913#0" />
+            <element signature="e#5914#6443#0" />
+            <element signature="e#6444#6897#0" />
+            <element signature="e#7721#8211#0" />
+          </folding>
         </state>
       </provider>
     </entry>
