@@ -15,7 +15,6 @@
 
 #include "ConveyorElement.h"
 
-void childSignal(int inp);
 ConveyorElement::ConveyorElement(std::string inputLine) {
 
     std::istringstream inputStream(inputLine);
@@ -90,6 +89,7 @@ int ConveyorElement::run() {
                 return 0;
             } else {
                 execvp(this->argv[0], this->argv);
+                perror("no such programm");
                 _exit(0);
             }
         } else //it's the parent code
@@ -133,6 +133,7 @@ int ConveyorElement::run(std::string fname, int mode) {
                 }
                 execvp(this->argv[0], this->argv);
                 close(pfd);
+                perror("no such programm");
                 _exit(0);
             }
             else //it's the parent code
@@ -143,7 +144,7 @@ int ConveyorElement::run(std::string fname, int mode) {
         }
         case NEWOUTPUT_MODE: {
             int pfd;
-            pfd = open(fname.c_str(), O_WRONLY | O_CREAT);
+            pfd = open(fname.c_str(), O_WRONLY | O_CREAT,420);
             if (pfd == -1) {
                 perror("");
             }
@@ -158,6 +159,7 @@ int ConveyorElement::run(std::string fname, int mode) {
                 dup(pfd);
                 execvp(this->argv[0], this->argv);
                 close(pfd);
+                perror("no such programm");
                 _exit(0);
             }
             else //it's the parent code
@@ -168,7 +170,7 @@ int ConveyorElement::run(std::string fname, int mode) {
         }
         case EXISTINGOUTPUT_MODE: {
             int pfd;
-            pfd = open(fname.c_str(), O_WRONLY | O_CREAT | O_APPEND);
+            pfd = open(fname.c_str(), O_WRONLY | O_CREAT | O_APPEND,420);
             if (pfd == -1) {
                 perror("");
             }
@@ -184,6 +186,7 @@ int ConveyorElement::run(std::string fname, int mode) {
                 dup(pfd);
                 execvp(this->argv[0], this->argv);
                 close(pfd);
+                perror("no such programm");
                 _exit(0);
             }
             else //it's the parent code
@@ -199,11 +202,11 @@ int ConveyorElement::run(std::string inpfname,std::string outfname, int mode) {
     int pfdOUTPUT;
     int pfdINPUT;
     if (mode == EXISTINGOUTPUT_MODE) {
-        pfdOUTPUT = open(outfname.c_str(), O_WRONLY | O_CREAT | O_APPEND);
+        pfdOUTPUT = open(outfname.c_str(), O_WRONLY | O_CREAT | O_APPEND, 420);
         pfdINPUT = open(inpfname.c_str(), O_RDONLY);
     }
     else if (mode == NEWOUTPUT_MODE){
-        pfdOUTPUT = open(outfname.c_str(), O_WRONLY | O_CREAT);
+        pfdOUTPUT = open(outfname.c_str(), O_WRONLY | O_CREAT, 420);
         pfdINPUT = open(inpfname.c_str(), O_RDONLY);
     }
     else {
@@ -227,6 +230,7 @@ int ConveyorElement::run(std::string inpfname,std::string outfname, int mode) {
         execvp(this->argv[0], this->argv);
         close(pfdINPUT);
         close(pfdOUTPUT);
+        perror("no such programm");
         _exit(0);
     }
     else //it's the parent code
@@ -234,9 +238,6 @@ int ConveyorElement::run(std::string inpfname,std::string outfname, int mode) {
         this->childPid = pid;
         return 0;
     }
-}
-pid_t ConveyorElement::getPID() {
-    return this->childPid;
 }
 int ConveyorElement::intoPipeIO(int I, int O) {
     pid_t pid = fork();
@@ -246,13 +247,14 @@ int ConveyorElement::intoPipeIO(int I, int O) {
     if (pid == 0) //it's the child code
     {
         signal(SIGINT, childSignal);
-        if (close(0) == -1 || close(1) == -1 || dup2(I, 0) < 0 || close(I) != 0 ||
-                dup2(O, 0) < 0 || close(O) != 0)
+        if (close(0) == -1 || dup2(I, 0) < 0 || close(I) != 0 || close(1) == -1 || dup2(O, 1) < 0 || close(O) != 0)
         {
             perror(this->argv[0]);
+            perror("no such programm");
             exit(1);
         }
         execvp(this->argv[0], this->argv);
+        perror("no such programm");
         _exit(0);
     } else //it's the parent code
     {
@@ -271,9 +273,11 @@ int ConveyorElement::intoPipeI_(int I) {
         if (close(0) == -1 || dup2(I, 0) < 0 || close(I) != 0)
         {
             perror(this->argv[0]);
+            perror("no such programm");
             exit(1);
         }
         execvp(this->argv[0], this->argv);
+        perror("no such programm");
         _exit(0);
     } else //it's the parent code
     {
@@ -295,6 +299,7 @@ int ConveyorElement::intoPipe_O(int O) {
             _exit(1);
         }
         execvp(this->argv[0], this->argv);
+        perror("no such programm");
         _exit(0);
     } else //it's the parent code
     {
@@ -302,12 +307,15 @@ int ConveyorElement::intoPipe_O(int O) {
         return 0;
     }
 }
+pid_t ConveyorElement::getPID() {
+    return this->childPid;
+}
 
-void childSignal(int inp)
-{
+void childSignal(int inp){
     kill(getpid(), SIGKILL);
     return;
 }
+
 
 
 //TODO: we can return ConveyorElement, not int to make possible .sjknad().ajlksjdal().asmdlk()

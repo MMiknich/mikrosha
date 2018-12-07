@@ -12,6 +12,8 @@
 
 #include <string>
 
+void childSignal(int inp);
+
 class ConveyorElement {
 
 private:

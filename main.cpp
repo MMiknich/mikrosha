@@ -1,8 +1,3 @@
-
-//SETTINGS
-#define MAX_PIPE_Q 100 // max quantity of
-
-
 #include <iostream>
 #include <sstream>
 #include <dirent.h>
@@ -17,41 +12,56 @@
 #include <fcntl.h>
 #include "ConveyorElement.h"
 
-void parentSignal(int inp);
-int lineinterpreter(const std::string input_line);
+int lineInterpreter(const std::string &input_line);
 
 int main(int argc, char* argv[]){
-    signal(SIGINT, SIG_IGN);
     while (true) {
+        signal(SIGINT, SIG_IGN); // we ignore ctrl+C;
+
+        signal(EOF, childSignal); // in ctrl+D case we exit;
+
 
         //--Defining basic data
         passwd *userdata = getpwuid(getuid());
 
-        std::string user_name = userdata->pw_name ; // defining name of start user
-        bool isRoot = !(bool) std::strcmp(user_name.c_str(),"root"); // root flag
-        char userInvite = isRoot?'!':'>'; // just to make output easy
+        // defining name of start user
+        std::string user_name = userdata->pw_name;
+        bool isRoot = !(bool) std::strcmp(user_name.c_str(), "root"); // root flag
+        char userInvite = isRoot ? '!' : '>';
 
         char buff[FILENAME_MAX];
         std::string start_dir = getcwd(buff, FILENAME_MAX); //defining start directory
 
+        // invite like: [user /home/user/Desktop]> or [root /home/user/Desktop]!
+        std::printf("[%s %s]%c ", user_name.c_str(), start_dir.c_str(), userInvite);
 
-        std::printf("[%s %s]%c ", user_name.c_str(), start_dir.c_str(),
-                    userInvite); // invite like: [user /home/user/Desktop]> or [root /home/user/Desktop]!
+        char breaker = (char) getchar();
+        std::string inputLine;
+        if(breaker == EOF)
+        {
+            printf("\n");
+            break;
+        }
+        else if(breaker == '\n')
+            continue;
+        else{
+            while (breaker  != '\n') {
+                inputLine += breaker;
+                breaker = getchar();
+            }
+        }
 
-        std::string inputLine = "";
-        std::getline(std::cin, inputLine);
-
+        // Defining  type of expression
         std::size_t convSimbol = inputLine.find('|');
         std::size_t inpRedirect = inputLine.find('<');
         std::size_t outRedirect = inputLine.find('>');
 
 
-        //this code is made for  <, >, >>.
+        //this code made for pipe
         if (convSimbol != std::string::npos) {
-            //TODO: parsing | | | and #PATH
-            lineinterpreter(inputLine);
+            lineInterpreter(inputLine);
 
-        }
+        }//this code is made for  <, >, >>.
         else if (outRedirect != std::string::npos && inpRedirect != std::string::npos)
         {
             std::size_t firstSimb = outRedirect < inpRedirect ? outRedirect : inpRedirect; // looking for first of '<' and '>'
@@ -128,8 +138,7 @@ int main(int argc, char* argv[]){
 
 
         //TODO: убрать этот колхоз(сделать нормальный выход из программы)
-        if(!std::strcmp(inputLine.c_str(),"exit"))
-            break;
+
 
     }
     return 0;
@@ -138,7 +147,7 @@ int main(int argc, char* argv[]){
 
 
 //function, that's interprets line as conveyor
-int lineinterpreter(const std::string input_line)
+int lineInterpreter(const std::string &input_line)
 {
     std::istringstream input_stream(input_line);
     std::string inpComm; //не нашел нормального англицкого слова для элемента конвеера
@@ -147,13 +156,13 @@ int lineinterpreter(const std::string input_line)
     {
         conveyor.push_back(new ConveyorElement(inpComm));
     };
-    int cSize = conveyor.size();
+    unsigned long cSize = conveyor.size();
     int *pipeline = new int[(cSize-1)*2];
-
-    int p = pipe(pipeline);
-    if (p == -1) {
-        perror("pipe");
-        return 0;
+                              //  . i>>>>>l ^
+    int p = pipe(pipeline);   //i>>>>>l i>>>>>l
+    if (p == -1) {            //0 1 2 3 4 5 6 7
+        perror("pipe");       //l<i l<i l<i
+        return 0;             //pipe model
     }
 
     (*conveyor[0]).intoPipe_O(*(pipeline + 1));
@@ -168,17 +177,13 @@ int lineinterpreter(const std::string input_line)
         (*conveyor[i]).intoPipeIO(*(pipeline + (2*i) - 2), *(pipeline + (2*i) +1));
     }
     (*conveyor[cSize - 1]).intoPipeI_(*(pipeline + (2*cSize) - 4));
-    for (int i = 0; i < cSize - 1; i++)
+    for (int i = 0; i < cSize -1; i++)
     {
         wait(0);
     }
     return 0;
 }
 
-void parentSignal(int inp)
-{
-    return;
-}
 
 
     //TODO: parsing
