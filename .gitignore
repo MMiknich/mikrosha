@@ -1,6 +1,8 @@
 .git/*
 .directory
+CMakeFiles/*
 CMakeLists.txt
-a.out
+mikrosha
 .idea/*
 cmake-build-debug/*
+cmake-build-debug/*/*

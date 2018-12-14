@@ -27,16 +27,6 @@
 					<DistClean command="/bin/make -j8 -f &quot;/home/mmiknich/Study/Bcode/mikrosha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="/home/mmiknich/Study/Bcode/mikrosha/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/bin/make -j8 -f &quot;/home/mmiknich/Study/Bcode/mikrosha/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/bin/make -j8 -f &quot;/home/mmiknich/Study/Bcode/mikrosha/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/bin/make -j8 -f &quot;/home/mmiknich/Study/Bcode/mikrosha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/bin/make -j8 -f &quot;/home/mmiknich/Study/Bcode/mikrosha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
 			<Target title="mikrosha">
 				<Option output="/home/mmiknich/Study/Bcode/mikrosha/cmake-build-debug/mikrosha" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/mmiknich/Study/Bcode/mikrosha/cmake-build-debug"/>
@@ -76,6 +66,16 @@
 				</Compiler>
 				<MakeCommands>
 					<Build command="/bin/make -j8 -f &quot;/home/mmiknich/Study/Bcode/mikrosha/cmake-build-debug/Makefile&quot;  VERBOSE=1 mikrosha/fast"/>
+					<CompileFile command="/bin/make -j8 -f &quot;/home/mmiknich/Study/Bcode/mikrosha/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/bin/make -j8 -f &quot;/home/mmiknich/Study/Bcode/mikrosha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/bin/make -j8 -f &quot;/home/mmiknich/Study/Bcode/mikrosha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/mmiknich/Study/Bcode/mikrosha/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/bin/make -j8 -f &quot;/home/mmiknich/Study/Bcode/mikrosha/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
 					<CompileFile command="/bin/make -j8 -f &quot;/home/mmiknich/Study/Bcode/mikrosha/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/bin/make -j8 -f &quot;/home/mmiknich/Study/Bcode/mikrosha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/bin/make -j8 -f &quot;/home/mmiknich/Study/Bcode/mikrosha/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>

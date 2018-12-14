@@ -27,6 +27,10 @@ glob.h
 -
 signal.h
 -
+sys/times.h
+-
+iomanip
+-
 ConveyorElement.h
 /home/mmiknich/Study/Bcode/mikrosha/ConveyorElement.h
 
