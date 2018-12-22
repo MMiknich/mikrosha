@@ -26,6 +26,8 @@ private:
 public:
     ConveyorElement(std::string inputLine);
     ~ConveyorElement();
+    ConveyorElement(ConveyorElement const &);
+    ConveyorElement &operator=(ConveyorElement const &);
     //TODO: pipe and others
     int ctm();
     int run();// without inp/outp redirection

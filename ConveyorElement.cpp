@@ -68,8 +68,9 @@ ConveyorElement::ConveyorElement(std::string inputLine) {
 }
 ConveyorElement::~ConveyorElement() {
     for (int i = 0; i < this->numofArgv; ++i) {
-        free(*(this->argv + i));
+        delete [] argv[i];
     }
+    delete [] argv;
 }
 int ConveyorElement::run() {
     if(this->numofArgv > 0) {
@@ -113,9 +114,9 @@ int ConveyorElement::run() {
             {
                 endTime = clock();
                 times(&en_cpu);
-                std::cerr<< "real:\n" << std::fixed << std::setprecision(6) << (endTime - startTime)/CLOCKS_PER_SEC << "\n";
-                std::cerr<< "user:\n" << en_cpu.tms_utime - st_cpu.tms_utime << "\n";
-                std::cerr << "sys:\n" << en_cpu.tms_stime - st_cpu.tms_stime<< "\n";
+                std::cerr<< "real:\n" << std::fixed << std::setprecision(6) << ((double)(endTime - startTime))/CLOCKS_PER_SEC << "\n";
+               // std::cerr<< "user:\n" << ((double)(en_cpu.tms_utime - st_cpu.tms_utime))/CLOCKS_PER_SEC << "\n";
+                std::cerr << "sys:\n" << ((double)(en_cpu.tms_stime - st_cpu.tms_stime))/CLOCKS_PER_SEC<< "\n";
 
             }
             return 0;

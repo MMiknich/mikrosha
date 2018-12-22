@@ -59,6 +59,13 @@ int main(int argc, char* argv[]){
         std::size_t inpRedirect = inputLine.find('<');
         std::size_t outRedirect = inputLine.find('>');
 
+
+	if(convSimbol == 0 || inpRedirect == 0 || outRedirect == 0)
+	{
+		perror("Wrong sintax");
+		continue;
+	}
+
         //check for mistake
         if(outRedirect != std::string::npos) {
             if (inputLine.size() == outRedirect + 1 || inputLine.substr(outRedirect + 2).find('>') != std::string::npos)
@@ -240,7 +247,7 @@ int lineInterpreter(const std::string &input_line) {
         // in case if last conveyer element have > or >> redirection
         }else if (outRedirect != std::string::npos)
         {
-            if (outRedirect + 1 == inpComm.size() )
+            if (outRedirect + 1 == inpComm.size()  )
             {
                 std::cout << "Wrong input" << '\n';
                 return -1;
@@ -315,8 +322,10 @@ int lineInterpreter(const std::string &input_line) {
     for (int i = 0; i < cSize; i++) {
         wait(nullptr);
     }
+    delete[] pipeline;
     for (auto &i : conveyor) {
-        free(i);
+        delete(i);
+	std::cout << "Hi, there!\n";
     }
     return 0;
 }
